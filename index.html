@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Academic website of Your Name: research, publications, teaching, and contact." />
+  <title>Your Name | Academic Research</title>
+  <style>
+    :root{--navy:#14263d;--navy2:#203b59;--gold:#a9783f;--ink:#243347;--muted:#596a7b;--paper:#f7f6f2;--white:#fff;--line:#e0e4e8;--radius:15px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7}
+    a{color:#215c88;text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .shell{max-width:1050px;margin:auto;padding:0 26px}.topbar{background:var(--navy);color:white;position:sticky;top:0;z-index:9;box-shadow:0 2px 14px #0c203526}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:Georgia,serif;font-size:1.23rem;font-weight:700;color:white;white-space:nowrap}.brand:hover{color:white}
+    .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:16px}.links a{font-size:.89rem;color:#edf1f7}.links a:hover{color:#e8c49a}
+    .hero{background:linear-gradient(128deg,#172b45 0%,#263f5b 72%,#344e67 100%);color:white;overflow:hidden}.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) 235px;gap:50px;align-items:center;padding-top:83px;padding-bottom:91px}
+    .eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.18em;color:#e8c49a;text-transform:uppercase}.hero h1{font:normal clamp(2.8rem,6vw,4.6rem)/1.12 Georgia,"Times New Roman",serif;margin:17px 0}.hero .role{font-size:1.15rem;color:#e3eaf1;margin:0 0 19px}.hero .intro{max-width:610px;color:#d9e1e9;font-size:1.05rem}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+    .button{display:inline-block;padding:10px 17px;border:1px solid #d8b487;border-radius:7px;background:#e5c399;color:#1b2c3d;font-weight:700;font-size:.91rem}.button.alt{background:transparent;color:white;border-color:#8092a6}.button:hover{text-decoration:none;filter:brightness(1.07)}
+    .portrait{width:226px;height:265px;background:linear-gradient(145deg,#e2d5c4,#b2c1c8);border:7px solid #ffffff26;border-radius:115px 115px 16px 16px;display:flex;align-items:center;justify-content:center;color:#2d4558;font:normal 4.4rem Georgia,serif;box-shadow:0 18px 45px #0c152950;position:relative;overflow:hidden}.portrait:after{content:"ADD PHOTO";position:absolute;bottom:15px;font:700 10px system-ui,sans-serif;letter-spacing:.25em;color:#526172}.portrait img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2}
+    main{padding:44px 0 80px}.section{scroll-margin-top:90px;padding:27px 0}.section-heading{display:flex;align-items:baseline;gap:18px;margin-bottom:18px}.section-heading h2{font:normal 2rem Georgia,serif;color:var(--navy);margin:0;white-space:nowrap}.section-heading:after{content:"";height:1px;background:#d5d6d6;flex:1}.lead{font-size:1.06rem;max-width:830px}.muted{color:var(--muted)}
+    .interests{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.tag{background:#e9edf0;border:1px solid #d9dfe4;color:#334c65;border-radius:99px;padding:5px 12px;font-size:.83rem;font-weight:600}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 3px 12px #26364a08}.card .num{color:var(--gold);font:normal 1.3rem Georgia,serif}.card h3{font:normal 1.21rem Georgia,serif;color:var(--navy);margin:9px 0}.card p{font-size:.93rem;color:var(--muted);margin:0}
+    .publication{padding:21px 0;border-bottom:1px solid #d9dce0}.publication:first-of-type{border-top:1px solid #d9dce0}.publication h3{font-size:1.04rem;line-height:1.45;margin:0 0 5px;color:var(--navy)}.publication p{margin:3px 0;font-size:.94rem}.publication .pub-links{display:flex;gap:14px;margin-top:9px;font-size:.88rem;font-weight:700}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}.note{background:#fff;border-left:4px solid var(--gold);padding:20px 23px;border-radius:0 10px 10px 0}.note h3{font:normal 1.15rem Georgia,serif;margin:0 0 7px;color:var(--navy)}.note p{margin:0;color:var(--muted)}
+    .contact{background:#e9edf0;border-radius:var(--radius);padding:25px 28px}.contact p{margin:8px 0;overflow-wrap:anywhere}.contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:15px;font-weight:700}
+    footer{background:var(--navy);color:#b9c6d2;padding:22px 0;font-size:.85rem}footer a{color:#f0d0a5}
+    @media(max-width:720px){.nav{align-items:flex-start;flex-direction:column;padding-top:14px;padding-bottom:14px;gap:8px}.links{justify-content:flex-start;gap:9px 15px}.hero-inner{grid-template-columns:1fr;padding-top:48px;padding-bottom:51px;gap:31px}.portrait{width:150px;height:176px;font-size:3rem}.cards,.split{grid-template-columns:1fr}.section-heading h2{font-size:1.7rem}.shell{padding:0 19px}.hero h1{font-size:3.1rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <!-- QUICK START: Find "Your Name", "Your University", and example.com to customize. -->
+  <header class="topbar">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#home">Your Name</a>
+      <div class="links">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-inner shell">
+      <div>
+        <div class="eyebrow">Academic &amp; Research Portfolio</div>
+        <h1>Your Name</h1>
+        <p class="role">PhD Student / Researcher · Your Department · Your University</p>
+        <p class="intro">I study <strong>your primary research topic</strong>, with an interest in how research can help us better understand and improve the world around us.</p>
+        <div class="buttons">
+          <a class="button" href="#research">Explore my research →</a>
+          <a class="button alt" href="cv.pdf" target="_blank" rel="noopener">View my CV (PDF)</a>
+        </div>
+      </div>
+      <!-- Optional: Upload profile.jpg to your repo, then uncomment the img line below. -->
+      <div class="portrait" aria-label="Placeholder for your professional headshot">YN
+        <!-- <img src="profile.jpg" alt="Portrait of Your Name"> -->
+      </div>
+    </div>
+  </section>
+
+  <main class="shell">
+    <section class="section" id="about">
+      <div class="section-heading"><h2>About Me</h2></div>
+      <p class="lead">I am a <strong>PhD student / researcher</strong> in the <strong>Department of Your Field</strong> at <strong>Your University</strong>. My work focuses on your main research themes, combining theoretical insight with practical approaches to important questions in the field.</p>
+      <p class="muted">Before joining Your University, I studied at Previous Institution. I enjoy interdisciplinary collaboration, mentoring students, and communicating research beyond academia.</p>
+      <div class="interests" aria-label="Research interests"><span class="tag">Research Area One</span><span class="tag">Research Area Two</span><span class="tag">Research Methods</span><span class="tag">Interdisciplinary Work</span></div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-heading"><h2>Research</h2></div>
+      <p class="muted">Replace these example cards with your current research themes or projects.</p>
+      <div class="cards">
+        <article class="card"><div class="num">01</div><h3>Research Theme One</h3><p>Write two or three sentences on the core question, why it matters, and the methods you use.</p></article>
+        <article class="card"><div class="num">02</div><h3>Research Theme Two</h3><p>Introduce another strand of work, your main approach, and what you hope to learn.</p></article>
+        <article class="card"><div class="num">03</div><h3>Current Project</h3><p>Summarize a recent or ongoing project, including collaborators or funding if relevant.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="section-heading"><h2>Selected Publications</h2></div>
+      <p class="muted">The entries below are <strong>illustrative placeholders</strong>—replace them with your real publications, or remove this section until you have some.</p>
+      <article class="publication">
+        <h3>Title of Your First Research Paper</h3>
+        <p><strong>Your Name</strong>, Coauthor Name, Coauthor Name</p>
+        <p class="muted"><em>Journal or Conference Name</em>, 2026 (example only)</p>
+        <div class="pub-links"><a href="https://example.com" target="_blank" rel="noopener">Paper ↗</a><a href="https://example.com" target="_blank" rel="noopener">DOI ↗</a></div>
+      </article>
+      <article class="publication">
+        <h3>Title of Your Second Research Paper</h3>
+        <p>Coauthor Name, <strong>Your Name</strong></p>
+        <p class="muted"><em>Journal or Conference Name</em>, 2025 (example only)</p>
+        <div class="pub-links"><a href="https://example.com" target="_blank" rel="noopener">Paper ↗</a></div>
+      </article>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="section-heading"><h2>Teaching &amp; Mentoring</h2></div>
+      <div class="split">
+        <div class="note"><h3>Teaching</h3><p><strong>Course Name</strong> — Teaching Assistant / Instructor, Your University, 2025–2026 (example).</p></div>
+        <div class="note"><h3>Mentoring</h3><p>Describe your student mentorship, office hours, research group support, or outreach. Remove if not applicable.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-heading"><h2>Contact</h2></div>
+      <div class="contact">
+        <p><strong>Your Name</strong> · Your Department, Your University</p>
+        <p>Email: <a href="mailto:your.email@university.edu">your.email@university.edu</a></p>
+        <p>Office: Your Building / Room (optional)</p>
+        <div class="contact-links">
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar ↗</a>
+          <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID ↗</a>
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell">© <span id="year">2026</span> Your Name · Built with HTML &amp; CSS · Hosted on <a href="https://pages.github.com/">GitHub Pages</a></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
